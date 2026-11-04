@@ -1,0 +1,461 @@
+{
+  "presence": {
+    "no_class": {
+      "label": "No class",
+      "why": "Nothing is scheduled in this room now and the camera sees nobody.",
+      "tone": "neutral",
+      "attention": false
+    },
+    "occupied_unscheduled": {
+      "label": "Occupied, no class",
+      "why": "The camera sees people but nothing is scheduled in this room now.",
+      "tone": "warn",
+      "attention": true
+    },
+    "teacher_present": {
+      "label": "Teacher present",
+      "why": "The scheduled instructor took the key and the camera sees people in the room.",
+      "tone": "good",
+      "attention": false
+    },
+    "key_out_room_empty": {
+      "label": "Key out, room empty",
+      "why": "The key was taken but the camera sees nobody. The instructor may have stepped out.",
+      "tone": "warn",
+      "attention": true
+    },
+    "key_out_unchecked": {
+      "label": "Key out",
+      "why": "The key was taken. The camera has not reported lately, so the room is unchecked.",
+      "tone": "brass",
+      "attention": false
+    },
+    "key_with_other": {
+      "label": "Key with someone else",
+      "why": "The key is held by a person who is not scheduled in this room now.",
+      "tone": "bad",
+      "attention": true
+    },
+    "people_key_in_locker": {
+      "label": "People, key not taken",
+      "why": "People are in the room but the key is still in the locker.",
+      "tone": "warn",
+      "attention": true
+    },
+    "not_started": {
+      "label": "Waiting for teacher",
+      "why": "The class has just started and the key is still in the locker. The grace period is not over.",
+      "tone": "neutral",
+      "attention": false
+    },
+    "teacher_absent": {
+      "label": "Teacher not here",
+      "why": "The class started, the grace period is over, the key is still in the locker and nobody is seen.",
+      "tone": "bad",
+      "attention": true
+    },
+    "camera_only_present": {
+      "label": "People seen",
+      "why": "This room has no locker door, so only the camera is used. It sees people.",
+      "tone": "good",
+      "attention": false
+    },
+    "camera_only_empty": {
+      "label": "Room empty",
+      "why": "This room has no locker door, so only the camera is used. It sees nobody.",
+      "tone": "warn",
+      "attention": true
+    },
+    "unchecked": {
+      "label": "Not checked",
+      "why": "There is a class but no key and no recent camera report to judge by.",
+      "tone": "neutral",
+      "attention": false
+    }
+  },
+  "needsAttention": [
+    {
+      "presence": "no_class",
+      "discrepancy": null,
+      "expect": false
+    },
+    {
+      "presence": "occupied_unscheduled",
+      "discrepancy": null,
+      "expect": true
+    },
+    {
+      "presence": "teacher_present",
+      "discrepancy": null,
+      "expect": false
+    },
+    {
+      "presence": "key_out_room_empty",
+      "discrepancy": null,
+      "expect": true
+    },
+    {
+      "presence": "key_out_unchecked",
+      "discrepancy": null,
+      "expect": false
+    },
+    {
+      "presence": "key_with_other",
+      "discrepancy": null,
+      "expect": true
+    },
+    {
+      "presence": "people_key_in_locker",
+      "discrepancy": null,
+      "expect": true
+    },
+    {
+      "presence": "not_started",
+      "discrepancy": null,
+      "expect": false
+    },
+    {
+      "presence": "teacher_absent",
+      "discrepancy": null,
+      "expect": true
+    },
+    {
+      "presence": "camera_only_present",
+      "discrepancy": null,
+      "expect": false
+    },
+    {
+      "presence": "camera_only_empty",
+      "discrepancy": null,
+      "expect": true
+    },
+    {
+      "presence": "unchecked",
+      "discrepancy": null,
+      "expect": false
+    },
+    {
+      "presence": "no_class",
+      "discrepancy": "scheduled_but_empty",
+      "expect": false
+    },
+    {
+      "presence": "occupied_unscheduled",
+      "discrepancy": "scheduled_but_empty",
+      "expect": true
+    },
+    {
+      "presence": "teacher_present",
+      "discrepancy": "scheduled_but_empty",
+      "expect": false
+    },
+    {
+      "presence": "key_out_room_empty",
+      "discrepancy": "scheduled_but_empty",
+      "expect": true
+    },
+    {
+      "presence": "key_out_unchecked",
+      "discrepancy": "scheduled_but_empty",
+      "expect": false
+    },
+    {
+      "presence": "key_with_other",
+      "discrepancy": "scheduled_but_empty",
+      "expect": true
+    },
+    {
+      "presence": "people_key_in_locker",
+      "discrepancy": "scheduled_but_empty",
+      "expect": true
+    },
+    {
+      "presence": "not_started",
+      "discrepancy": "scheduled_but_empty",
+      "expect": false
+    },
+    {
+      "presence": "teacher_absent",
+      "discrepancy": "scheduled_but_empty",
+      "expect": true
+    },
+    {
+      "presence": "camera_only_present",
+      "discrepancy": "scheduled_but_empty",
+      "expect": false
+    },
+    {
+      "presence": "camera_only_empty",
+      "discrepancy": "scheduled_but_empty",
+      "expect": true
+    },
+    {
+      "presence": "unchecked",
+      "discrepancy": "scheduled_but_empty",
+      "expect": false
+    },
+    {
+      "presence": null,
+      "discrepancy": "scheduled_but_empty",
+      "expect": true
+    },
+    {
+      "presence": null,
+      "discrepancy": "occupied_not_scheduled",
+      "expect": true
+    },
+    {
+      "presence": null,
+      "discrepancy": null,
+      "expect": false
+    }
+  ],
+  "peopleText": [
+    {
+      "count": null,
+      "occupied": null,
+      "expect": "not checked"
+    },
+    {
+      "count": null,
+      "occupied": true,
+      "expect": "someone"
+    },
+    {
+      "count": null,
+      "occupied": false,
+      "expect": "nobody"
+    },
+    {
+      "count": 0,
+      "occupied": null,
+      "expect": "not checked"
+    },
+    {
+      "count": 0,
+      "occupied": true,
+      "expect": "someone"
+    },
+    {
+      "count": 0,
+      "occupied": false,
+      "expect": "nobody"
+    },
+    {
+      "count": 1,
+      "occupied": null,
+      "expect": "not checked"
+    },
+    {
+      "count": 1,
+      "occupied": true,
+      "expect": "1 person"
+    },
+    {
+      "count": 1,
+      "occupied": false,
+      "expect": "nobody"
+    },
+    {
+      "count": 2,
+      "occupied": null,
+      "expect": "not checked"
+    },
+    {
+      "count": 2,
+      "occupied": true,
+      "expect": "2 people"
+    },
+    {
+      "count": 2,
+      "occupied": false,
+      "expect": "nobody"
+    },
+    {
+      "count": 15,
+      "occupied": null,
+      "expect": "not checked"
+    },
+    {
+      "count": 15,
+      "occupied": true,
+      "expect": "15 people"
+    },
+    {
+      "count": 15,
+      "occupied": false,
+      "expect": "nobody"
+    }
+  ],
+  "times": [
+    {
+      "t": "00:00:00",
+      "expect": "12:00 AM"
+    },
+    {
+      "t": "00:05:00",
+      "expect": "12:05 AM"
+    },
+    {
+      "t": "09:00:00",
+      "expect": "9:00 AM"
+    },
+    {
+      "t": "11:59:00",
+      "expect": "11:59 AM"
+    },
+    {
+      "t": "12:00:00",
+      "expect": "12:00 PM"
+    },
+    {
+      "t": "12:30:00",
+      "expect": "12:30 PM"
+    },
+    {
+      "t": "13:05:00",
+      "expect": "1:05 PM"
+    },
+    {
+      "t": "23:59:00",
+      "expect": "11:59 PM"
+    },
+    {
+      "t": "07:30",
+      "expect": "7:30 AM"
+    }
+  ],
+  "ranges": [
+    {
+      "a": "08:00:00",
+      "b": "09:30:00",
+      "expect": "8:00 AM to 9:30 AM"
+    },
+    {
+      "a": "12:00:00",
+      "b": "13:00:00",
+      "expect": "12:00 PM to 1:00 PM"
+    },
+    {
+      "a": "00:00:00",
+      "b": "23:59:00",
+      "expect": "12:00 AM to 11:59 PM"
+    }
+  ],
+  "dates": [
+    {
+      "d": "2026-11-09",
+      "expect": "Mon, Nov 9"
+    },
+    {
+      "d": "2026-01-01",
+      "expect": "Thu, Jan 1"
+    },
+    {
+      "d": "2026-12-31",
+      "expect": "Thu, Dec 31"
+    },
+    {
+      "d": "2027-02-28",
+      "expect": "Sun, Feb 28"
+    },
+    {
+      "d": "2028-02-29",
+      "expect": "Tue, Feb 29"
+    },
+    {
+      "d": "2026-11-03",
+      "expect": "Tue, Nov 3"
+    }
+  ],
+  "dateTimes": [
+    {
+      "iso": "2026-11-03T08:12:45.123+00:00",
+      "expect": "Nov 3, 4:12 PM"
+    },
+    {
+      "iso": "2026-11-09T05:30:00Z",
+      "expect": "Nov 9, 1:30 PM"
+    },
+    {
+      "iso": "2026-12-31T16:05:00Z",
+      "expect": "Jan 1, 12:05 AM"
+    },
+    {
+      "iso": "2026-06-01T00:00:00Z",
+      "expect": "Jun 1, 8:00 AM"
+    },
+    {
+      "iso": "2026-06-01T04:00:00Z",
+      "expect": "Jun 1, 12:00 PM"
+    }
+  ],
+  "errors": [
+    {
+      "message": "new row violates exclusion constraint \"no_room_double_booking\"",
+      "expect": "That room is already booked at that time, possibly by another department."
+    },
+    {
+      "message": "no_instructor_double_booking",
+      "expect": "That instructor already teaches at that time."
+    },
+    {
+      "message": "conflicting key value violates exclusion constraint \"no_room_double_request\"",
+      "expect": "That room or instructor is already taken by an approved request at that time."
+    },
+    {
+      "message": "no_instructor_double_request",
+      "expect": "That room or instructor is already taken by an approved request at that time."
+    },
+    {
+      "message": "start is outside school hours",
+      "expect": "The school is not open at that time. See School hours."
+    },
+    {
+      "message": "new row violates row-level security policy for table \"x\"",
+      "expect": "You are not allowed to do that."
+    },
+    {
+      "message": "permission denied for table y",
+      "expect": "You are not allowed to do that."
+    },
+    {
+      "message": "Failed to fetch",
+      "expect": "Could not reach the server. Check your connection and try again."
+    },
+    {
+      "message": "NetworkError when attempting to fetch resource",
+      "expect": "Could not reach the server. Check your connection and try again."
+    },
+    {
+      "message": "a note is required when rejecting a request",
+      "expect": "a note is required when rejecting a request"
+    },
+    {
+      "message": "that time has already passed",
+      "expect": "that time has already passed"
+    }
+  ],
+  "whepUrls": [
+    {
+      "gateway": "http://192.168.1.50:8889",
+      "stream": "lrc-301",
+      "expect": "http://192.168.1.50:8889/lrc-301/whep"
+    },
+    {
+      "gateway": "http://192.168.1.50:8889/",
+      "stream": "lrc-301",
+      "expect": "http://192.168.1.50:8889/lrc-301/whep"
+    },
+    {
+      "gateway": "http://192.168.1.50:8889///",
+      "stream": "/rooms/lrc-301/",
+      "expect": "http://192.168.1.50:8889/rooms/lrc-301/whep"
+    },
+    {
+      "gateway": "https://cams.school.edu",
+      "stream": "a/b",
+      "expect": "https://cams.school.edu/a/b/whep"
+    }
+  ]
+}

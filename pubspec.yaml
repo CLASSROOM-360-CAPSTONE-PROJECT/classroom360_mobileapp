@@ -1,0 +1,59 @@
+name: classroom360_mobile
+description: Classroom360 for deans and administrators - watch the classroom cameras and decide room requests from a phone.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # the same Supabase project as the web app
+  supabase_flutter: ">=2.8.0 <3.0.0"
+  # plays the camera's WebRTC picture
+  flutter_webrtc: ">=0.12.0 <2.0.0"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ">=4.0.0"
+  # makes the home-screen icon from assets/icon (run once: dart run flutter_launcher_icons)
+  flutter_launcher_icons: ">=0.14.0 <1.0.0"
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/icon/icon.png
+  adaptive_icon_background: "#1A2C45"
+  adaptive_icon_foreground: assets/icon/icon_foreground.png
+  remove_alpha_ios: true
+
+flutter:
+  uses-material-design: true
+
+  # IBM Plex, the same three families as the web app (SIL Open Font License, see assets/fonts/OFL-IBM-Plex.txt).
+  # They are bundled so the phone never needs the network to draw its letters.
+  fonts:
+    - family: IBMPlexSans
+      fonts:
+        - asset: assets/fonts/IBMPlexSans-Regular.ttf
+        - asset: assets/fonts/IBMPlexSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/IBMPlexSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/IBMPlexSans-Bold.ttf
+          weight: 700
+    - family: IBMPlexSansCondensed
+      fonts:
+        - asset: assets/fonts/IBMPlexSansCondensed-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/IBMPlexSansCondensed-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/IBMPlexSansCondensed-Bold.ttf
+          weight: 700
+    - family: IBMPlexMono
+      fonts:
+        - asset: assets/fonts/IBMPlexMono-Regular.ttf
+        - asset: assets/fonts/IBMPlexMono-Medium.ttf
+          weight: 500
